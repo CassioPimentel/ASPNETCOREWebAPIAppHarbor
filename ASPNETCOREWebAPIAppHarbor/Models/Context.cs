@@ -10,6 +10,6 @@ namespace ASPNETCOREWebAPIAppHarbor.Models
         }
 
         public DbSet<Marca> Marca { get; set; }
-        public DbSet<ModeloCarro> ModeloCarro { get; set; }
+        public DbSet<Modelo> Modelo { get; set; }
     }
 }

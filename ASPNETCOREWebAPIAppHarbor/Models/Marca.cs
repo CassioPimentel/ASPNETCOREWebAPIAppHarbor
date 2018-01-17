@@ -7,13 +7,13 @@ namespace ASPNETCOREWebAPIAppHarbor.Models
     {
         public Marca()
         {
-            ModeloCarro = new List<ModeloCarro>();
+            Modelo = new List<Modelo>();
         }
 
         [Key]
         public int Codigo { get; set; }
         public string Nome { get; set; }
 
-        public virtual ICollection<ModeloCarro> ModeloCarro { get; set; }
+        public virtual ICollection<Modelo> Modelo { get; set; }
     }
 }

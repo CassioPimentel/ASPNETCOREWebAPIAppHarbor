@@ -2,7 +2,7 @@
 
 namespace ASPNETCOREWebAPIAppHarbor.Models
 {
-    public class ModeloCarro
+    public class Modelo
     {
         [Key]
         public int Codigo { get; set; }
