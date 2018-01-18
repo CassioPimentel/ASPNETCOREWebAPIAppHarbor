@@ -1,9 +1,11 @@
-﻿using ASPNETCOREWebAPIAppHarbor.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ASPNETCOREWebAPIAppHarbor.Models;
 
 namespace ASPNETCOREWebAPIAppHarbor.Controllers
 {
@@ -20,9 +22,9 @@ namespace ASPNETCOREWebAPIAppHarbor.Controllers
 
         // GET: api/Modelo
         [HttpGet]
-        public IEnumerable<Modelo> GetModelo()
+        public JsonResult GetModelo()
         {
-            return _context.Modelo;
+            return Json(_context.Modelo.Include("Marca").ToList());
         }
 
         // GET: api/Modelo/5
@@ -87,6 +89,9 @@ namespace ASPNETCOREWebAPIAppHarbor.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            var Marca = _context.Marca.Find(modelo.MarcaCodigo);
+            modelo.Marca = Marca;
 
             _context.Modelo.Add(modelo);
             await _context.SaveChangesAsync();

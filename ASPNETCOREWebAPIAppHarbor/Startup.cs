@@ -22,7 +22,7 @@ namespace ASPNETCOREWebAPIAppHarbor
             services.AddMvc();
 
             services.AddDbContext<Context>(options =>
-                   options.UseMySQL("CONNECTION STRING"));
+                   options.UseMySQL("server=3ac74848-67ac-48fe-a97b-a86801128e1f.mysql.sequelizer.com;database=db3ac7484867ac48fea97ba86801128e1f;uid=akavrbhyrtgvzhcm;pwd=zdfwYzv8itTkbA4vuDHgHK8s7ejLcRZNVKkCdLcHdbQvrh7oZ3CzQ74WdUyUpR6y"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

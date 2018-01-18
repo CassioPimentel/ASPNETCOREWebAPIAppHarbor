@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ASPNETCOREWebAPIAppHarbor.Models
@@ -14,6 +15,7 @@ namespace ASPNETCOREWebAPIAppHarbor.Models
         public int Codigo { get; set; }
         public string Nome { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Modelo> Modelo { get; set; }
     }
 }
